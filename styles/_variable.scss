@@ -1,0 +1,58 @@
+/*主色用於產品畫面中的重點、CTA按鈕，需符合20%原則，避免過多主色分散注意*/
+$primary-100: #f5fee7;
+$primary-200: #e8efc5;
+$primary-300: #c0fa73;
+$primary-400: #57a203;
+$primary-500: #477a11;
+/*用於文字、表格、分隔線等基礎介面元素，創造和諧的視覺體驗，不搶走主要內容的注意力*/
+$neutral-0: #fff;
+$neutral-100: #f8f9fa;
+$neutral-200: #e9ecef;
+$neutral-300: #dee2e6;
+$neutral-400: #ced4da;
+$neutral-500: #adb5bd;
+$neutral-600: #6c757d;
+$neutral-700: #495057;
+$neutral-800: #343a40;
+$neutral-900: #212529;
+
+$danger-100: #fcf1f1;
+$danger-200: #eba7a7;
+$danger-300: #e9ecef;
+
+$success-100: #eff8f4;
+$success-200: #9ad1ba;
+$success-300: #36a375;
+
+$warning-100: #fef6ec;
+$warning-200: #f9c588;
+$warning-300: #f38b12;
+
+$info-100: #eef5fc;
+$info-200: #97c3ed;
+$info-300: #3087db;
+
+$text-primary: $neutral-900;
+$text-secondary: $neutral-600;
+$text-muted: $neutral-500;
+$text-highlight: $primary-400;
+$text-dark: $neutral-0;
+
+$font-family-base: "Noto Sans TC", "PingFang TC", "Heiti TC",
+  "Microsoft JhengHei", sans-serif;
+
+$spacing-xxs: 4px;
+$spacing-xs: 8px;
+$spacing-s: 12px;
+$spacing-m: 16px;
+$spacing-l: 24px;
+$spacing-xl: 32px;
+$spacing-xxl: 40px;
+$spacing-xxxl: 48px;
+$spacing-xxxxl: 64px;
+$spacing-xxxxxxl: 80px;
+
+/*radius*/
+$radius-sm: 4px;
+$radius-md: 12px;
+$radius-rounded: 1000px;

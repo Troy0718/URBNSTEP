@@ -1,0 +1,34 @@
+.nav-list {
+  display: flex;
+  align-items: center;
+  flex-direction: row; // 明確設定由左到右
+  justify-content: left;
+  flex-wrap: nowrap;
+  gap: 12px;
+
+  .nav-item {
+    padding: 12px 0;
+    margin-right: 48px;
+  }
+}
+.logo a {
+  display: block;
+  width: 129px;
+  height: 49px;
+  padding: 12px 0;
+  background-image: url("../images/logo.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  text-indent: 101%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.footer-about {
+  background-color: $neutral-100;
+  padding: 64px 0;
+  .footer-text p {
+    color: $neutral-600;
+    font-weight: 300;
+    text-align: center;
+  }
+}

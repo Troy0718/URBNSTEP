@@ -1,0 +1,21 @@
+// 1. 變數與設定（variable）最先匯入，其他檔案會用到變數
+@import "variable";
+
+// 2. Reset / Normalize（rest），用來清除瀏覽器預設樣式，通常要在最前面
+@import "reset";
+
+// 3. 第三方樣式（pure-min），載入框架樣式，這裡建議放在 reset 後面
+@import "pure-min";
+
+@import "typography";
+
+// 4. 全站共用基底樣式（base），定義基本 HTML 元素樣式、排版基礎
+@import "base";
+
+// 5. 佈局樣式（layout），大區塊定位、網格等
+@import "layout";
+
+@import "components";
+
+@import "./pages/about";
+@import "./pages/product";
