@@ -1,21 +1,31 @@
+//---layout---------
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* 垂直置中 */
+}
+
+//---layout---------
+
 .nav-list {
   display: flex;
   align-items: center;
   flex-direction: row; // 明確設定由左到右
-  justify-content: left;
+  justify-content: flex-start;
   flex-wrap: nowrap;
-  gap: 12px;
-
-  .nav-item {
-    padding: 12px 0;
-    margin-right: 48px;
-  }
+  gap: 32px;
 }
+.nav-item {
+  padding-top: 16px;
+  height: 49px;
+  margin-right: 48px;
+}
+
 .logo a {
   display: block;
   width: 129px;
   height: 49px;
-  padding: 12px 0;
   background-image: url("../images/logo.svg");
   background-size: contain;
   background-repeat: no-repeat;
@@ -23,12 +33,17 @@
   overflow: hidden;
   white-space: nowrap;
 }
+
 .footer-about {
   background-color: $neutral-100;
   padding: 64px 0;
-  .footer-text p {
-    color: $neutral-600;
-    font-weight: 300;
-    text-align: center;
-  }
+}
+.footer-text p {
+  color: $neutral-600;
+  font-weight: 300;
+  text-align: center;
+}
+.footer-products {
+  background-color: $neutral-100;
+  padding: 24px 0;
 }

@@ -5,7 +5,7 @@
 @import "reset";
 
 // 3. 第三方樣式（pure-min），載入框架樣式，這裡建議放在 reset 後面
-@import "pure-min";
+// @import "pure-min";
 
 @import "typography";
 
@@ -19,3 +19,4 @@
 
 @import "./pages/about";
 @import "./pages/product";
+@import "./pages/productDetail";
