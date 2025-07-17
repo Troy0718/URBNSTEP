@@ -211,7 +211,7 @@ if (page) {
   const $container = $(container);
   // 使用 axios 取得 products.json 裡的商品資料
   axios
-    .get("../js/products.json")
+    .get("./js/products.json")
     .then((response) => {
       // 取得資料陣列
       const products = response.data.products;
