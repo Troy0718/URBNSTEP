@@ -59,14 +59,7 @@ main {
   background-color: #f1f3f7;
   // position: relative;
 }
-// .card-badge {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   padding: 8px 12px;
-//   background-color: $primary-100;
-//   color: $primary-400;
-// }
+
 .card-title {
   color: $neutral-900;
   font-weight: 600;
@@ -86,4 +79,20 @@ main {
   display: flex;
   justify-content: center;
   gap: 24px;
+}
+
+@media screen and (max-width: 375px) {
+  .sidebar {
+    display: none;
+  }
+
+  .card-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); // 2欄
+    gap: 12px; // 間距
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
 }

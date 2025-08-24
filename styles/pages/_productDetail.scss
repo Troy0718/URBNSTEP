@@ -76,3 +76,93 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
 }
+
+@media screen and (max-width: 375px) {
+  /* 左右欄堆疊 */
+  .productInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  /* gallery 與 content 區塊寬度 100% */
+  .productInfo-gallery,
+  .productInfo-content {
+    width: 100%;
+  }
+  /* gallery-grid 單欄顯示 */
+  .productInfo-gallery .gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr; // 單欄
+    gap: 8px;
+  }
+  /* gallery-grid裡的圖片全部隱藏 */
+  .gallery-grid .gallery-grid-img {
+    display: none;
+  }
+
+  /* gallery-grid裡的圖片只顯示第一張 */
+  .gallery-grid .gallery-grid-img:first-child {
+    display: block;
+  }
+
+  /* size 只顯示兩欄 */
+  .size-options-wrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); // 兩欄
+    gap: 8px; // 欄間距
+  }
+  // ---------------- btn-wrapper ----------------
+  /*收藏、試穿按鈕*/
+  .btn-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* 「門市預約或試穿」按鈕，占滿剩餘寬度 */
+  .btn-wrapper > .btn:not(.addFavorite) {
+    flex: 1;
+    order: 1;
+  }
+  /* 「加入收藏」正方形只顯示 icon */
+  .btn-wrapper > .addFavorite {
+    flex: 0 0 auto;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-indent: -9999px; /* 隱藏文字 */
+    order: 2; /* 放右側 */
+    border: 0px solid $neutral-200;
+  }
+
+  /* 保留愛心 icon 中心 */
+  .btn-wrapper .addFavorite .btn-icon {
+    text-indent: 0; /* 顯示 icon */
+    font-size: 24px;
+  }
+  /* 你可能喜歡 */
+  .recommendation-list {
+    display: flex; // 改成水平排列
+    gap: 12px; // 卡片間距
+    overflow-x: auto; // 允許水平捲動
+    scroll-snap-type: x mandatory; // 滑動對齊
+    -webkit-overflow-scrolling: touch; // 手機滑順
+    padding-bottom: 8px; // 避免遮到 scrollbar
+  }
+
+  .recommendation-list .card {
+    flex: 0 0 auto; // 卡片固定寬度，不縮放
+    width: clamp(300px, 40%, 100%); // 可依需求調整卡片寬度
+    aspect-ratio: 1 / 1;
+    scroll-snap-align: start; // 對齊左側
+  }
+
+  /* optional: 隱藏 scrollbar (部分瀏覽器) */
+  .recommendation-list::-webkit-scrollbar {
+    display: none;
+  }
+}

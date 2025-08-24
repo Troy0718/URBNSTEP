@@ -14,14 +14,22 @@ body {
   background-color: #fafafa;
   // font-weight: 500;
   font-family: $font-family-base;
+  overflow-x: hidden;
 }
 .container {
   margin: 0 auto;
-  max-width: 67.5%;
+  max-width: 1200px; // ✅ 建議用固定 px，或用 clamp
+  width: 90%; // ✅ 小螢幕時會隨比例縮小
 }
 img {
   max-width: 100%;
-  height: 100%;
+  height: auto;
   display: block;
   object-fit: cover;
+}
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%; // ✅ 手機版寬度滿版
+    padding: 0 12px; // ✅ 保留安全邊距
+  }
 }
