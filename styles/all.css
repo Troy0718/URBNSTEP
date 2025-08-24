@@ -228,6 +228,7 @@ body {
   margin: 0;
   background-color: #fafafa;
   font-family: "Noto Sans TC", "PingFang TC", "Heiti TC", "Microsoft JhengHei", sans-serif;
+  overflow-x: hidden;
 }
 
 .container {
@@ -292,6 +293,37 @@ img {
   padding: 24px 0;
 }
 
+@media screen and (max-width: 375px) {
+  .nav-list .nav-item:nth-child(2),
+  .nav-list .nav-item:nth-child(3) {
+    display: none;
+  }
+  /*footer*/
+  .footer-products .nav-list .nav-item {
+    display: block; /* 不被隱藏 */
+  }
+  .footer-products nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .footer-products .nav-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+  .footer-products .logo a {
+    display: block; /* 讓 span 變成區塊，才好控制 */
+    padding-left: 0;
+    margin-left: -15px;
+  }
+  .footer-products .footer-text {
+    width: 100%;
+    border-top: 1px solid #dee2e6;
+  }
+}
 .mb-64 {
   margin-bottom: 64px;
 }
@@ -582,24 +614,41 @@ img {
   color: #dee2e6;
 }
 
+/* herosection - 專門負責排版部分 */
 .hero-section {
   width: 100%;
-  height: 400px;
   overflow: hidden;
   margin-bottom: 64px;
   position: relative;
+  /* 背景圖片排版設定 */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 400px;
 }
 .hero-section .hero-text {
   position: absolute;
-  color: #fff;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
 
+.hero-section .hero-text {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.hero-section .hero-text h1 {
+  margin-bottom: 8px;
+}
+.hero-section .hero-text h2 {
+  font-size: 1.25rem;
+  font-weight: normal;
+}
+
 .brand-story {
-  width: 856px;
+  max-width: 68%;
   background-color: #f5fee7;
   padding: 32px;
   text-align: center;
@@ -657,6 +706,91 @@ img {
   margin-right: 0.4em;
 }
 
+.message-section {
+  margin-top: 48px;
+  background-color: #e8efc5;
+  padding: 24px 0;
+}
+
+.message-content {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+@media (max-width: 375px) {
+  /* herosection */
+  .hero-section {
+    margin-bottom: 32px;
+    height: 240px;
+  }
+  .hero-section img {
+    width: 100%; /* 撐滿容器寬度 */
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  /*.brand-story,*/
+  .brand-story {
+    max-width: 100%;
+    margin-right: 12px;
+    margin-left: 12px;
+    margin-bottom: 32px;
+    padding: 24px;
+  }
+  .brand-story-quote {
+    margin-bottom: 12px;
+  }
+  .brand-story-quote,
+  .paragraph-md,
+  .brand-intro-title {
+    text-align: left;
+  }
+  /*brand-intro*/
+  .brand-intro {
+    padding-bottom: 32px;
+  }
+  .brand-intro .brand-content,
+  .brand-intro .brand-intro-img {
+    padding: 0 12px;
+    height: auto;
+  }
+  .brand-intro .brand-content .brand-intro-title,
+  .brand-intro .brand-intro-img .brand-intro-title {
+    padding: 16px 0;
+  }
+  .brand-intro-img img {
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .brand-intro.mb-64 {
+    margin-bottom: 32px;
+  }
+  /*message-section*/
+}
+@media (max-width: 375px) and (max-width: 375px) {
+  .message-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: nowrap; /* 不換行 */
+    overflow-x: hidden; /* 強制不出現水平滾動 */
+  }
+  .message-content .h5 {
+    font-size: 16px;
+    white-space: nowrap; /* 單行 */
+    flex-shrink: 1; /* 空間不足時縮小 */
+    min-width: 0; /* flex-shrink 生效必須 */
+  }
+  .pure-button-fill-neutral {
+    font-size: 12px;
+    padding: 8px 12px;
+    white-space: nowrap; /* 單行 */
+    flex-shrink: 1; /* 空間不足時縮小 */
+    min-width: 0; /* flex-shrink 生效 */
+  }
+}
 .breadcrumb {
   display: flex;
   flex-wrap: wrap;

@@ -1,21 +1,43 @@
+/* herosection - 專門負責排版部分 */
 .hero-section {
   width: 100%;
-  height: 400px;
   overflow: hidden;
   margin-bottom: 64px;
   position: relative;
+
+  /* 背景圖片排版設定 */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; // 滿版裁切
+  height: 400px; // 桌機高度
+
   .hero-text {
     position: absolute;
-    color: $neutral-0;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
   }
 }
+.hero-section {
+  .hero-text {
+    color: $neutral-0;
+    font-size: 2rem;
+    font-weight: bold;
+
+    h1 {
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: normal;
+    }
+  }
+}
 
 .brand-story {
-  width: 856px;
+  max-width: 68%;
   background-color: $primary-100;
   padding: 32px;
   text-align: center;
@@ -26,7 +48,6 @@
 }
 
 .brand-intro {
-  // margin-bottom: 48px;
   max-width: 1076px;
   padding-bottom: 48px;
   border-bottom: 1px solid $neutral-300;
@@ -73,5 +94,97 @@
     font-weight: normal;
     display: inline-block;
     margin-right: 0.4em;
+  }
+}
+
+.message-section {
+  margin-top: 48px;
+  background-color: $primary-200;
+  padding: 24px 0;
+}
+
+.message-content {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+@media (max-width: 375px) {
+  /* herosection */
+  .hero-section {
+    margin-bottom: 32px;
+    height: 240px;
+    img {
+      width: 100%; /* 撐滿容器寬度 */
+
+      object-fit: contain; // contain完整呈現
+    }
+  }
+  /*.brand-story,*/
+  .brand-story {
+    max-width: 100%;
+    margin-right: 12px;
+    margin-left: 12px;
+    margin-bottom: 32px;
+    padding: 24px;
+  }
+  .brand-story-quote {
+    margin-bottom: 12px;
+  }
+  .brand-story-quote,
+  .paragraph-md,
+  .brand-intro-title {
+    text-align: left;
+  }
+
+  /*brand-intro*/
+  .brand-intro {
+    padding-bottom: 32px;
+    .brand-content,
+    .brand-intro-img {
+      padding: 0 12px;
+      height: auto;
+      // aspect-ratio: 16 / 9;
+      // overflow-x: hidden;
+      .brand-intro-title {
+        padding: 16px 0;
+      }
+    }
+  }
+  .brand-intro-img img {
+    // width: 100%;
+    // height: 100%;
+    object-fit: contain;
+  }
+
+  .brand-intro.mb-64 {
+    margin-bottom: 32px;
+  }
+  /*message-section*/
+
+  @media (max-width: 375px) {
+    .message-content {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: nowrap; /* 不換行 */
+      overflow-x: hidden; /* 強制不出現水平滾動 */
+    }
+
+    .message-content .h5 {
+      font-size: 16px;
+      white-space: nowrap; /* 單行 */
+      flex-shrink: 1; /* 空間不足時縮小 */
+      min-width: 0; /* flex-shrink 生效必須 */
+    }
+
+    .pure-button-fill-neutral {
+      font-size: 12px;
+      padding: 8px 12px;
+      white-space: nowrap; /* 單行 */
+      flex-shrink: 1; /* 空間不足時縮小 */
+      min-width: 0; /* flex-shrink 生效 */
+    }
   }
 }
